@@ -1,4 +1,4 @@
-import styles from "./Keyboard.module.css"
+import "./Keyboard.css"
 
 const KEYS = [
     "a",
@@ -41,7 +41,7 @@ export function Keyboard() {
             {KEYS.map(key => {
                 return (
                 <button
-                    className={`${styles.btn}`}
+                    className="btn"
                  key={key}
                  >
                     {key}
