@@ -1,4 +1,5 @@
-import "./Keyboard.css"
+// @ts-nocheck
+import "./Keyboard.module.css"
 
 const KEYS = [
     "a",
@@ -40,10 +41,9 @@ export function Keyboard() {
         >
             {KEYS.map(key => {
                 return (
-                <button
-                    className="btn"
-                 key={key}
-                 >
+                    <button
+                        className="btn"
+                        key={key}>
                     {key}
                 </button>
                 )
