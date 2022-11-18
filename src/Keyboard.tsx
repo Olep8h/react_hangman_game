@@ -1,4 +1,3 @@
-// @ts-nocheck
 import "./Keyboard.module.css"
 
 const KEYS = [
