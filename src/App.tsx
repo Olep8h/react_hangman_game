@@ -75,13 +75,24 @@ function App() {
             }}
         >
             <div style={{ fontSize: "2rem", textAlign: "center" }}>
-                {isWinner && "Winner! - Refresh to try again"}
+                {isWinner && "Nice you are winner! - Refresh to try again"}
                 {isLoser && "Nice Try - Refresh to try again"}
             </div>
             <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-            <HangmanWord/>
+            <HangmanWord
+                reveal={isLoser}
+                guessedLetters={guessedLetters}
+                wordToGuess={wordToGuess}
+            />
             <div style={{ alignSelf: "stretch" }}>
-                <Keyboard />
+                <Keyboard
+                    disabled={isWinner || isLoser}
+                    activeLetters={guessedLetters.filter(letter =>
+                        wordToGuess.includes(letter)
+                    )}
+                    inactiveLetters={incorrectLetters}
+                    addGuessedLetter={addGuessedLetter}
+                />
             </div>
         </div>
     )
